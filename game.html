@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Игра</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: #fff3f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: Arial;
+            touch-action: none;
+        }
+        #heart {
+            font-size: 80px; /* Больше для телефона */
+            position: absolute;
+            cursor: pointer;
+            transition: 0.1s;
+            padding: 25px; /* Увеличена зона клика */
+        }
+        h2 {
+            position: absolute;
+            top: 20px;
+            color: #ff4f7b;
+            font-size: 26px;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Поймай сердечко ❤️</h2>
+<div id="heart">❤️</div>
+
+<script>
+    const heart = document.getElementById("heart");
+
+    // Ставим сердце в случайное место
+    function moveHeart() {
+        const size = 120; // учёт padding
+        let x = Math.random() * (window.innerWidth - size);
+        let y = Math.random() * (window.innerHeight - size - 50);
+
+        heart.style.left = x + "px";
+        heart.style.top = y + "px";
+    }
+
+    // Движение чуть реже, чтобы успевать нажимать
+    setInterval(moveHeart, 1200);
+
+    // Победа при клике
+    heart.addEventListener("click", () => {
+        window.location.href = "certificate.html";
+    });
+
+    // Победа при касании пальцем
+    heart.addEventListener("touchstart", () => {
+        window.location.href = "certificate.html";
+    });
+
+    moveHeart();
+</script>
+
+</body>
+</html>
