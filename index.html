@@ -17,26 +17,35 @@
         }
         h1 {
             color: #ff4f7b;
-            font-size: 64px; /* увеличенный текст */
+            font-size: 64px;
             margin-bottom: 15px;
         }
         p {
-            font-size: 40px; /* увеличенный текст */
+            font-size: 40px;
             color: #444;
             margin-bottom: 40px;
         }
         .btn {
             background: #ff4f7b;
             color: white;
-            padding: 25px 60px; /* увеличенные отступы для большой кнопки */
+            padding: 25px 60px;
             border: none;
-            border-radius: 16px; /* чуть больше скругление */
-            font-size: 32px; /* увеличенный текст кнопки */
+            border-radius: 16px;
+            font-size: 32px;
             cursor: pointer;
             text-decoration: none;
         }
         .btn:hover {
             background: #ff6e95;
+        }
+
+        /* Для телефонов: делаем кнопку ещё больше */
+        @media (max-width: 600px) {
+            .btn {
+                padding: 35px 80px;
+                font-size: 42px;
+                border-radius: 20px;
+            }
         }
     </style>
 </head>
