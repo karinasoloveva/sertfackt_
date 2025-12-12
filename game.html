@@ -16,7 +16,7 @@
             touch-action: none;
         }
         #heart {
-            font-size: 80px; /* Больше для телефона */
+            font-size: 100px; /* Больше для телефона */
             position: absolute;
             cursor: pointer;
             transition: 0.1s;
@@ -51,7 +51,7 @@
     }
 
     // Движение чуть реже, чтобы успевать нажимать
-    setInterval(moveHeart, 1200);
+    setInterval(moveHeart, 700);
 
     // Победа при клике
     heart.addEventListener("click", () => {
